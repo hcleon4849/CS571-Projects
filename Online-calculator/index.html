@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Calculator</title>
+    /* CSS styles are included here */
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+        /* Style for form position */
+        .form-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header{
+            text-align: center;
+        }
+
+        input[type="button"] {
+            width: 100%;
+            padding: 20px;
+            font-size: 18px;
+            margin: 5px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }    
+
+        input[type="text"] {
+            width: 90%;
+            padding: 20px;
+            font-size: 18px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            text-align: right;
+        }
+        .error-message {
+            color: red;
+            border: 1px solid red;
+            margin-bottom: 10px;
+            display: none;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: #ffe6e6;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <div id="error-message" class="error-message"></div>
+        <div class="header">
+            <h3>Online Calculator</h3>
+        </div>
+        <form>
+            <table>
+                <tr> 
+                    <td colspan="5">
+                        <input type="text" id="screen" readonly>
+                    </td> 
+                </tr> 
+
+                <tr>
+                    <td colspan="2">
+                        <input type="button" value="Clear" onclick="clr()">
+                    </td>
+                    <td><input type="button" value="=" onclick="solve()"></td>
+                    <td><input type="button" value="(" onclick="dis('(')"></td>
+                    <td><input type="button" value=")" onclick="dis(')')"></td>
+                </tr>
+
+                <tr>
+                    <td><input type="button" value="*" onclick="dis('*')"></td>
+                    <td><input type="button" value="/" onclick="dis('/')"></td>
+                    <td><input type="button" value="+" onclick="dis('+')"></td>
+                    <td><input type="button" value="-" onclick="dis('-')"></td>
+                    <td><input type="button" value="." onclick="dis('.')"></td>
+                </tr>
+
+                <tr>
+                    <td><input type="button" value="1" onclick="dis('1')"></td>
+                    <td><input type="button" value="2" onclick="dis('2')"></td>
+                    <td><input type="button" value="3" onclick="dis('3')"></td>
+                    <td><input type="button" value="4" onclick="dis('4')"></td>
+                    <td><input type="button" value="5" onclick="dis('5')"></td>
+                </tr>
+
+                <tr>
+                    <td><input type="button" value="6" onclick="dis('6')"></td>
+                    <td><input type="button" value="7" onclick="dis('7')"></td>
+                    <td><input type="button" value="8" onclick="dis('8')"></td>
+                    <td><input type="button" value="9" onclick="dis('9')"></td>
+                    <td><input type="button" value="0" onclick="dis('0')"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <!-- Calculator buttons are included here -->
+    <script>
+        function dis(val) {
+            document.getElementById("error-message").style.display = 'none';
+            document.getElementById("screen").value += val;
+        }
+
+        function solve() {
+            let currentValue = document.getElementById("screen").value;
+            try {
+                let result = eval(currentValue);
+                document.getElementById("screen").value = result;
+            } catch (e) {
+                document.getElementById("error-message").innerText = 'Invalid expression';
+                document.getElementById("error-message").style.display = 'block';
+            }
+        }
+
+        function clr() {
+            document.getElementById("screen").value = "";
+            document.getElementById("error-message").style.display = 'none';
+        }
+    </script>
+    
+</body>
+</html>
+    
+</body>
+</html>
