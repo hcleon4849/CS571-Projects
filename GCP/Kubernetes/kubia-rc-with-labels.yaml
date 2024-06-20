@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kubia-rc-with-labels
+  labels:
+    creation_method: manual
+    env: python3.8
+spec:
+  containers:
+  - image: hartina/myrep
+    name: kubia-rc
+    ports:
+    - containerPort: 8080
+      protocol: TCP
+
