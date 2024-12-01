@@ -1,6 +1,5 @@
 # TokenGPT
-TokenGPT is an AI-powered chatbot designed to assist with token engineering. 
-It leverages the ChatGPT API, Retrieval-Augmented Generation (RAG), and function calling capabilities to provide comprehensive insights and analysis for decentralized economies.
+An AI-powered chatbot called TokenGPT was created to help with token engineering. It provides thorough insights and analysis for decentralized economies by utilizing the ChatGPT API, Retrieval-Augmented Generation (RAG), and function calling capabilities.
 
 # Setup Instructions
 ## Step 1: Clone the Repository
