@@ -3,8 +3,7 @@ An AI-powered chatbot called TokenGPT was created to help with token engineering
 
 # Setup Instructions
 ## Step 1: Clone the Repository
-First, clone the repository to your local machine:
-``` GenA/Blockchain/TokenGPT ```
+First, clone the repository to your local machine.
 
 ## Step2: Create a Virtual Environment
 Create a virtual environment to manage dependencies:
