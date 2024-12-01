@@ -42,8 +42,12 @@ $env:OPENAI_API_KEY = "your_openai_api_key_here"
 $env:BASE_PATH = "your_base_path_here"
 $env:DUNE_API_KEY = "your_dune_api_key_here"
 ```
+
 ## Step 5: Run the Chatbot
-Run the ``` chatbot.py ``` script to start the TokenGPT application:
+Create the ``` chatbot.py ``` script to start the TokenGPT application:
 ```
 python chatbot.py
 ```
+Create the ``` brain.py ``` script interprets user queries and, if needed, delegates specific tasks to ``` uniswap.py ```
+Create the ``` uniswap.py ``` script calls to get real-time data about tokens
+
